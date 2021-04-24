@@ -1,0 +1,33 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+ 
+# Intellij
+.idea/
+*.iml
+*.iws
+*.log
+ 
+# Mac
+.DS_Store
+ 
+# Net Beans
+nbproject/private/
+build/
+nbbuild/
+dist/
+target/
+nbdist/
+.nb-gradle/
+
+# logback
+logs/
+
+*.bak
+*.jdbc
+
+
+
+/target/
