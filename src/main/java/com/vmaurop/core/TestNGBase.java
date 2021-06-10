@@ -1,7 +1,7 @@
 package com.vmaurop.core;
 
 import com.codeborne.selenide.Selenide;
-import com.vmaurop.configuration.GoogleConfig;
+import com.vmaurop.api.EuroNiceAPI;
 import com.vmaurop.configuration.SpringConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,8 +14,9 @@ import org.testng.annotations.Parameters;
 @ContextConfiguration(classes = SpringConfig.class)
 public class TestNGBase extends AbstractTestNGSpringContextTests {
 
+
     @Autowired
-    GoogleConfig googleConfig;
+    EuroNiceAPI euroNiceAPI;
 
 
     @BeforeClass(alwaysRun = true)

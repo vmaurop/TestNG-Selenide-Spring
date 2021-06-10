@@ -1,31 +1,32 @@
 package com.vmaurop.api;
 
-import com.vmaurop.configuration.GoogleConfig;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+
+import static com.vmaurop.api.PathBuilder.TRANSLATION_REQUEST;
 
 
-public class GenericAPI {
-
-    @Autowired
-    private GoogleConfig googleConfig;
+@Configuration
+public class EuroNiceAPI {
 
 
-    protected RequestSpecification getGenericApiReqSpec() {
-        String baseUri = googleConfig.getUrl().toString();
+    private Response responseTranslationRequest;
+
+
+    protected RequestSpecification getGenericApiReqSpec(String apiUri) {
         return new RequestSpecBuilder()
-                .setBaseUri(baseUri)
+                .setBaseUri(apiUri)
                 .build();
     }
 
-    protected Response apiGenericGet(String path) {
+    protected Response apiGenericGet(String apiUri, String path) {
         return RestAssured
                 .given().relaxedHTTPSValidation().contentType(ContentType.JSON).
-                        spec(getGenericApiReqSpec()).
+                        spec(getGenericApiReqSpec(apiUri)).
                         when().log().all().
                         get(path)
                 .then().log().all().
@@ -33,10 +34,10 @@ public class GenericAPI {
                         response();
     }
 
-    protected Response apiGenericPost(String bodyJson, String path) {
+    protected Response apiGenericPost(String apiUri, String bodyJson, String path) {
         return RestAssured
                 .given().relaxedHTTPSValidation().contentType(ContentType.JSON).
-                        spec(getGenericApiReqSpec()).
+                        spec(getGenericApiReqSpec(apiUri)).
                         body(bodyJson)
                 .when().log().all().
                         post(path)
@@ -46,4 +47,7 @@ public class GenericAPI {
     }
 
 
+    public void postTranslationRequest(String apiUri, String requestBodyJson) {
+        responseTranslationRequest = apiGenericPost(apiUri, requestBodyJson, TRANSLATION_REQUEST);
+    }
 }

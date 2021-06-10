@@ -6,4 +6,6 @@ public final class PathBuilder {
         throw new IllegalStateException("PathBuilder class");
     }
 
+    public static final String TRANSLATION_REQUEST = "/translation-request-service/translationRequests";
+
 }
