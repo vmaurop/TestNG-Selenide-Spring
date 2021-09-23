@@ -1,7 +1,7 @@
 package com.vmaurop.core;
 
 import com.codeborne.selenide.Selenide;
-import com.vmaurop.api.EuroNiceAPI;
+import com.vmaurop.api.APICalls;
 import com.vmaurop.configuration.SpringConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,7 +16,7 @@ public class TestNGBase extends AbstractTestNGSpringContextTests {
 
 
     @Autowired
-    EuroNiceAPI euroNiceAPI;
+    APICalls APICalls;
 
 
     @BeforeClass(alwaysRun = true)

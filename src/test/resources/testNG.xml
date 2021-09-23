@@ -2,10 +2,10 @@
 <suite name="Test-Suite" parallel="tests" configfailurepolicy="continue" thread-count="4">
 
     <parameter name="browser" value="chrome"/>
-    <parameter name="baseUrl" value="http://xxx"/>
-    <parameter name="apiUrl" value="http://xxx/api"/>
-    <parameter name="userName" value="xxx"/>
-    <parameter name="password" value="xxx"/>
+    <parameter name="baseUrl" value="https://www.livescore.com/en/"/>
+    <parameter name="apiUrl" value="hhttps://www.livescore.com/en/api"/>
+    <parameter name="userName" value="vaggelis"/>
+    <parameter name="password" value="vaggelis"/>
     <parameter name="parallelSetup" value="tests"/>
     <parameter name="threadsNumber" value="4"/>
     <parameter name="gridUrl" value=""/>

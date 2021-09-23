@@ -2,7 +2,7 @@ package com.vmaurop.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vmaurop.domain.CdTRequest;
+import com.vmaurop.domain.Request;
 
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -30,14 +30,14 @@ public final class Data {
                 .getAsInt();
     }
 
-    public static String serializeTrademark(CdTRequest cdTRequest) throws JsonProcessingException {
+    public static String serializeRequest(Request request) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writeValueAsString(cdTRequest);
+        return objectMapper.writeValueAsString(request);
     }
 
-    public static CdTRequest deserializeTrademark(String jsonCdTRequest) throws IOException {
+    public static Request deserializeRequest(String jsonRequest) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(jsonCdTRequest, CdTRequest.class);
+        return objectMapper.readValue(jsonRequest, Request.class);
     }
 
 

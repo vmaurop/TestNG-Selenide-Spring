@@ -7,11 +7,9 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.springframework.context.annotation.Configuration;
 
-import static com.vmaurop.api.PathBuilder.TRANSLATION_REQUEST;
-
 
 @Configuration
-public class EuroNiceAPI {
+public class APICalls {
 
 
     private Response responseTranslationRequest;
@@ -47,7 +45,4 @@ public class EuroNiceAPI {
     }
 
 
-    public void postTranslationRequest(String apiUri, String requestBodyJson) {
-        responseTranslationRequest = apiGenericPost(apiUri, requestBodyJson, TRANSLATION_REQUEST);
-    }
 }
