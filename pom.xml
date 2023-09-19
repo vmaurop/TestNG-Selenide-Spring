@@ -10,10 +10,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <org.testng.version>7.3.0</org.testng.version>
-        <selenide.version>5.10.0</selenide.version>
-        <lombok.version>1.18.12</lombok.version>
+        <selenide.version>5.23.3</selenide.version>
+        <lombok.version>1.18.22</lombok.version>
         <org.springframework.version>5.2.8.RELEASE</org.springframework.version>
         <org.io.rest-assured.version>4.3.3</org.io.rest-assured.version>
         <json-path.version>4.3.3</json-path.version>
